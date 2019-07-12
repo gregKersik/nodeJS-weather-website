@@ -26,7 +26,7 @@ weatherForm.addEventListener('submit', (e) => {
             } else {
                 console.log(data.location);
                 console.log(data.forecast);
-                mssgOne.textContent = data.forecast.today
+                mssgOne.textContent = data.forecast.today + ' הטמפרטורה כרגע: ' + data.forecast.temperature
                 mssgTwo.textContent = data.location
             }
         })

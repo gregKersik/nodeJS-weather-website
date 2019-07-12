@@ -6,13 +6,13 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 
 const mssgOne = document.querySelector('#mssg1')
-mssgOne.textContent = ''
 const mssgTwo = document.querySelector('#mssg2')
-mssgTwo.textContent = ''
 
 
 
 weatherForm.addEventListener('submit', (e) => {
+    mssgOne.textContent = 'Loading...'
+    mssgTwo.textContent = ''
     e.preventDefault()
     const url = '/weather?address='
     const locationVar = search.value
@@ -27,6 +27,7 @@ weatherForm.addEventListener('submit', (e) => {
                 console.log(data.location);
                 console.log(data.forecast);
                 mssgOne.textContent = data.forecast.today
+                mssgTwo.textContent = data.location
             }
         })
     })
